@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5r37lpkiht1c"]
+
+[ext_resource type="Texture2D" uid="uid://f7ipkyrwmy3p" path="res://assets/GameBg.png" id="1_m1xhe"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+texture = ExtResource("1_m1xhe")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 115.0
+offset_bottom = 33.0
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 88.0
+offset_right = 296.0
+offset_bottom = 157.0
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 18.0
+offset_right = 373.0
+offset_bottom = 49.0
+text = "Back"

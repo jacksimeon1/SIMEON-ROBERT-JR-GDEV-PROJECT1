@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://btxm2500iknrl"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Game.cs" id="1_immcr"]
+[ext_resource type="PackedScene" uid="uid://c5646eu6pjjlu" path="res://Scenes/Gem/Gem.tscn" id="2_1qfhx"]
+[ext_resource type="Texture2D" uid="uid://f7ipkyrwmy3p" path="res://assets/GameBg.png" id="3_ry1s6"]
+[ext_resource type="PackedScene" uid="uid://ckj1w6yck0fxn" path="res://Scenes/Paddle/Paddle.tscn" id="4_vjeah"]
+[ext_resource type="AudioStream" uid="uid://dn3pt321xkwtw" path="res://assets/bgm_action_5.mp3" id="5_2oa0e"]
+[ext_resource type="AudioStream" uid="uid://c0gh74siuxxwr" path="res://assets/spell1_0.wav" id="6_bbaxc"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_spawnTimer", "_scoreLabel", "_music", "_effects")]
+script = ExtResource("1_immcr")
+_gemScene = ExtResource("2_1qfhx")
+_spawnTimer = NodePath("Timer")
+_scoreLabel = NodePath("ScoreLabel")
+_music = NodePath("Music")
+_effects = NodePath("Effects")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(587, 340)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ry1s6")
+
+[node name="Paddle" parent="." instance=ExtResource("4_vjeah")]
+position = Vector2(562, 552)
+_speed = 400.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.677012, 0.493015, 0.951487, 1)
+theme_override_colors/font_shadow_color = Color(0.929715, 0.929715, 0.929715, 1)
+theme_override_colors/font_outline_color = Color(0.264389, 0.264389, 0.264389, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "0000"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2oa0e")
+volume_db = -16.0
+autoplay = true
+
+[node name="Effects" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bbaxc")

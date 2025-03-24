@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvtxhe7imll5v"]
+
+[ext_resource type="Script" path="res://Scenes/GameOverUI.cs" id="1_kg6mr"]
+
+[node name="GameOverUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kg6mr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 272.0
+offset_right = 717.0
+offset_bottom = 296.0
+text = "GAME OVER!"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 111.0
+offset_right = 243.0
+offset_bottom = 142.0
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 152.0
+offset_right = 214.0
+offset_bottom = 183.0
+text = "Quit"
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
